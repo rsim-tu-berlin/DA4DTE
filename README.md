@@ -4,7 +4,7 @@ Software developed within the DA4DTE project has to be shared with ESA. To this 
 
 ### How To Add Your Code
 
-Each sub-project, for instance _image-to-image retrieval_ or _visual_question_answering_, should be added as a separate folder. Folders can be viewed as individual repositories and may contain `.gitignore`, `README.md` and environment files specific to the sub-project. Feel free to use the project structure according to your codebase, as long as you add it in a new folder to this repo. Please only work on your folders to avoid any git conflicts.
+Each sub-project, for instance _image-to-image retrieval_ or _visual_question_answering_, should be added as a separate folder. Folders can be viewed as individual repositories and may contain `.gitignore`, `README.md` and environment files specific to the sub-project. Please make sure that your code is well documented and the README explains the structure - e.g. `templateREADME.md`. Feel free to use the project structure according to your codebase, as long as you add it in a new folder to this repo. Please only work on your folders to avoid any git conflicts.
 
 ```
 |   README.md
@@ -23,3 +23,5 @@ Each sub-project, for instance _image-to-image retrieval_ or _visual_question_an
 │           ├── ....py
 |   ├── ...
 ```
+
+
