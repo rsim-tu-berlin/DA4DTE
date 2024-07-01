@@ -12,6 +12,9 @@ __pycache__/
 **/wandb/*
 **.wandb
 **.vscode
+**.h5
+**.gz
+**.tar
 
 # Distribution / packaging
 .Python

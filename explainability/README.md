@@ -8,4 +8,4 @@ For this code, the models to be explained are re-implemented such that they only
 
 #### Code
 
-This sub-repo contains two notebooks to demonstrate both LRP and BiLRP. The process of obtaining explanations should be straightforward by following these implementations.
+This sub-repo contains two notebooks to demonstrate both LRP and BiLRP. The process of obtaining explanations should be straightforward by following these implementations. The model weights which are assumed to be in `./weights/` can be downloaded from the shared TUB-Cloud, as they are too big for GitHub.

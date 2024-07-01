@@ -1,0 +1,96 @@
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+wandb:
+  enabled: True
+  entity: <TODO-entity>
+  project: <TODO-project>
+
+# disable hydra outputs
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+augmentations:
+  - rrc:
+      enabled: false
+      crop_min_scale: 0.08
+      crop_max_scale: 1.0
+    horizontal_flip:
+      prob: 0.5
+    vertical_flip:
+      prob: 0.5
+    crop_size: 120
+    num_crops: 1
+
+debug_augmentations: True
+
+method: "cmmae_vessel"
+backbone:
+  name: "vit_base"
+  kwargs:
+    img_size: 128
+    in_chans: 4
+    patch_size: 8
+    supervised_loss: True
+    global_pool: token  
+method_kwargs:
+  supervised_loss: True
+  supervised_loss_factor: 1.0
+  decoder_embed_dim: 512
+  decoder_depth: 8
+  decoder_num_heads: 16
+  mask_ratio: 0.5
+  norm_pix_loss: False
+momentum:
+  base_tau: 0.9995
+  final_tau: 1.0
+data:
+  dataset: vessel
+  split: query
+  root_dir: <TODO>
+  split_dir: <TODO>
+  train_path: "./"
+  val_path: "./"
+  format: "image_folder"
+  num_workers: 8
+  num_bands: 4
+  img_size: 128
+
+optimizer:
+  batch_size: 128
+  lr: 1.0e-4
+  classifier_lr: 1.0e-4
+  weight_decay: 0.05
+  kwargs:
+    betas: [0.9, 0.95]
+
+scheduler:
+  name: "warmup_cosine"
+  warmup_start_lr: 0.0
+  lr_decay_steps:
+  min_lr: 0
+  warmup_epochs: 10
+  interval: step
+
+checkpoint:
+  enabled: True
+  dir: "trained_models"
+  frequency: 1
+  keep_prev: False
+auto_resume:
+  enabled: False
+
+find_unused_parameters: False
+seed: 5
+
+# overwrite PL stuff
+max_epochs: 1
+devices: [0]
+sync_batchnorm: True
+accelerator: "gpu"
+strategy: "ddp"
+precision: 16
