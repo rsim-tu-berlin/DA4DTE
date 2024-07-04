@@ -6,7 +6,7 @@ import os
 class DUCH(nn.Module):
     def __init__(self, image_dim, text_dim, hidden_dim, hash_dim):
         super(DUCH, self).__init__()
-        self.module_name = 'DUCH'
+        self.module_name = "DUCH"
         self.image_dim = image_dim
         self.text_dim = text_dim
         self.hidden_dim = hidden_dim
@@ -17,14 +17,14 @@ class DUCH(nn.Module):
             nn.BatchNorm1d(hidden_dim),
             nn.ReLU(True),
             nn.Linear(hidden_dim, hash_dim, bias=True),
-            nn.Tanh()
+            nn.Tanh(),
         )
         self.text_module = nn.Sequential(
             nn.Linear(text_dim, hidden_dim, bias=True),
             nn.BatchNorm1d(hidden_dim),
             nn.ReLU(True),
             nn.Linear(hidden_dim, hash_dim, bias=True),
-            nn.Tanh()
+            nn.Tanh(),
         )
 
         # hash discriminator
@@ -32,9 +32,8 @@ class DUCH(nn.Module):
             nn.Linear(self.hash_dim, self.hash_dim * 2, bias=True),
             nn.BatchNorm1d(self.hash_dim * 2),
             nn.ReLU(True),
-            nn.Linear(self.hash_dim * 2, 1, bias=True)
+            nn.Linear(self.hash_dim * 2, 1, bias=True),
         )
-
 
     def forward(self, *args):
         if len(args) == 4:
@@ -44,7 +43,7 @@ class DUCH(nn.Module):
         elif len(args) == 2:
             res = self.forward_img_txt(*args)
         else:
-            raise Exception('Method must take 2, 3 or 4 arguments')
+            raise Exception("Method must take 2, 3 or 4 arguments")
         return res
 
     def forward_img_img_txt_txt(self, r_img1, r_img2, r_txt1, r_txt2):
@@ -73,14 +72,16 @@ class DUCH(nn.Module):
 
     def load(self, path, use_gpu=False):
         if not use_gpu:
-            self.load_state_dict(torch.load(path, map_location=lambda storage, loc: storage))
+            self.load_state_dict(
+                torch.load(path, map_location=lambda storage, loc: storage)
+            )
         else:
             self.load_state_dict(torch.load(path))
 
-    def save(self, name=None, path='./checkpoints', cuda_device=None):
+    def save(self, name=None, path="./checkpoints", cuda_device=None):
         if not os.path.exists(path):
             os.makedirs(path)
-        if cuda_device.type == 'cpu':
+        if cuda_device.type == "cpu":
             torch.save(self.state_dict(), os.path.join(path, name))
         else:
             with torch.cuda.device(cuda_device):
@@ -89,6 +90,8 @@ class DUCH(nn.Module):
 
     def discriminate_hash(self, h):
         return self.hash_dis(h).squeeze()
+
+
 # LEO
-    # def regress(self, h):
-    #     return self.reg_head(h).squeeze()
+# def regress(self, h):
+#     return self.reg_head(h).squeeze()

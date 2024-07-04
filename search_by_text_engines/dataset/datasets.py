@@ -7,9 +7,20 @@ from utils import select_idxs
 
 class AbstractDataset(torch.utils.data.Dataset):
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         self.seed = seed
-        self.image_replication_factor = 1  # default value, how many times we need to replicate image
+        self.image_replication_factor = (
+            1  # default value, how many times we need to replicate image
+        )
 
         self.images = images
         self.captions = captions
@@ -37,7 +48,16 @@ class DatasetDuplet5(AbstractDataset):
     Duplet dataset sample - img-txt (image and corresponding caption)
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization.
 
@@ -47,7 +67,9 @@ class DatasetDuplet5(AbstractDataset):
         """
         super().__init__(images, captions, labels, idxs, captions_aug, images_aug, seed)
 
-        self.image_replication_factor = 4  # how many times we need to replicate image (vessel dataste 4)
+        self.image_replication_factor = (
+            4  # how many times we need to replicate image (vessel dataste 4)
+        )
 
     def __getitem__(self, index):
         """
@@ -60,9 +82,9 @@ class DatasetDuplet5(AbstractDataset):
         return (
             index,
             (self.idxs[img_idx], self.idxs_cap[txt_idx]),
-            torch.from_numpy(self.images[img_idx].astype('float32')),
-            torch.from_numpy(self.captions[txt_idx].astype('float32')),
-            self.labels[img_idx]
+            torch.from_numpy(self.images[img_idx].astype("float32")),
+            torch.from_numpy(self.captions[txt_idx].astype("float32")),
+            self.labels[img_idx],
         )
 
     def __len__(self):
@@ -91,7 +113,16 @@ class DatasetTriplet5(AbstractDataset):
     Triplet dataset sample - img-txt-txt (image and 2 corresponding captions)
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization
 
@@ -101,7 +132,9 @@ class DatasetTriplet5(AbstractDataset):
         """
         super().__init__(images, captions, labels, idxs, captions_aug, images_aug, seed)
 
-        self.image_replication_factor = 8  # how many times we need to replicate image? 8
+        self.image_replication_factor = (
+            8  # how many times we need to replicate image? 8
+        )
 
     def __getitem__(self, index):
         """
@@ -114,10 +147,10 @@ class DatasetTriplet5(AbstractDataset):
         return (
             index,
             (self.idxs[img_idx], self.idxs_cap[txt1_idx], self.idxs_cap[txt2_idx]),
-            torch.from_numpy(self.images[img_idx].astype('float32')),
-            torch.from_numpy(self.captions[txt1_idx].astype('float32')),
-            torch.from_numpy(self.captions[txt2_idx].astype('float32')),
-            self.labels[img_idx]
+            torch.from_numpy(self.images[img_idx].astype("float32")),
+            torch.from_numpy(self.captions[txt1_idx].astype("float32")),
+            torch.from_numpy(self.captions[txt2_idx].astype("float32")),
+            self.labels[img_idx],
         )
 
     def __len__(self):
@@ -136,10 +169,12 @@ class DatasetTriplet5(AbstractDataset):
         :return:
         """
         # {0: (0, 1), 1: (0, 2), 2: (0, 3), 3: (0, 4), 4: (1, 2), 5: (1, 3), 6: (1, 4), 7: (2, 3), 8: (2, 4), 9: (3, 4)}
-        combinations = {k: v for k, v in enumerate(itertools.combinations(range(4), 2))}  # dict with C(5, 2) (4,2) range I put 4
+        combinations = {
+            k: v for k, v in enumerate(itertools.combinations(range(4), 2))
+        }  # dict with C(5, 2) (4,2) range I put 4
 
         img_idx = index // self.image_replication_factor
-        caption_base_idx = img_idx * 4  #4 because we have four caption for vessels
+        caption_base_idx = img_idx * 4  # 4 because we have four caption for vessels
         combination = combinations[index % self.image_replication_factor]
 
         txt1_idx = caption_base_idx + combination[0]
@@ -154,7 +189,16 @@ class DatasetQuadrupletAugmentedTxtImg(AbstractDataset):
     Quadruplet dataset sample - img-img-txt-txt
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization
 
@@ -164,7 +208,9 @@ class DatasetQuadrupletAugmentedTxtImg(AbstractDataset):
         """
         super().__init__(images, captions, labels, idxs, captions_aug, images_aug, seed)
 
-        caption_idxs = select_idxs(len(self.captions), 1, 4, seed=self.seed)[0] # I put 4 instead of 5
+        caption_idxs = select_idxs(len(self.captions), 1, 4, seed=self.seed)[
+            0
+        ]  # I put 4 instead of 5
         self.captions = self.captions[caption_idxs]
         self.captions_aug = self.captions_aug[caption_idxs]
         self.idxs_cap = self.idxs_cap[caption_idxs]
@@ -178,12 +224,17 @@ class DatasetQuadrupletAugmentedTxtImg(AbstractDataset):
         """
         return (
             index,
-            (self.idxs[index], self.idxs[index], self.idxs_cap[index], self.idxs_cap[index]),
-            torch.from_numpy(self.images[index].astype('float32')),
-            torch.from_numpy(self.images_aug[index].astype('float32')),
-            torch.from_numpy(self.captions[index].astype('float32')),
-            torch.from_numpy(self.captions_aug[index].astype('float32')),
-            self.labels[index]
+            (
+                self.idxs[index],
+                self.idxs[index],
+                self.idxs_cap[index],
+                self.idxs_cap[index],
+            ),
+            torch.from_numpy(self.images[index].astype("float32")),
+            torch.from_numpy(self.images_aug[index].astype("float32")),
+            torch.from_numpy(self.captions[index].astype("float32")),
+            torch.from_numpy(self.captions_aug[index].astype("float32")),
+            self.labels[index],
         )
 
     def __len__(self):
@@ -197,7 +248,16 @@ class DatasetQuadrupletAugmentedImg(AbstractDataset):
     Quadruplet dataset sample - img-img-txt-txt
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization
 
@@ -207,7 +267,9 @@ class DatasetQuadrupletAugmentedImg(AbstractDataset):
         """
         super().__init__(images, captions, labels, idxs, captions_aug, images_aug, seed)
 
-        idxs1, idxs2 = select_idxs(len(self.captions), 2, 4, seed=self.seed) #4 instead of 5
+        idxs1, idxs2 = select_idxs(
+            len(self.captions), 2, 4, seed=self.seed
+        )  # 4 instead of 5
         self.captions1 = self.captions[idxs1]
         self.captions2 = self.captions_aug[idxs2]
         self.idxs_cap1 = self.idxs_cap[idxs1]
@@ -222,12 +284,17 @@ class DatasetQuadrupletAugmentedImg(AbstractDataset):
         """
         return (
             index,
-            (self.idxs[index], self.idxs[index], self.idxs_cap1[index], self.idxs_cap2[index]),
-            torch.from_numpy(self.images[index].astype('float32')),
-            torch.from_numpy(self.images_aug[index].astype('float32')),
-            torch.from_numpy(self.captions1[index].astype('float32')),
-            torch.from_numpy(self.captions2[index].astype('float32')),
-            self.labels[index]
+            (
+                self.idxs[index],
+                self.idxs[index],
+                self.idxs_cap1[index],
+                self.idxs_cap2[index],
+            ),
+            torch.from_numpy(self.images[index].astype("float32")),
+            torch.from_numpy(self.images_aug[index].astype("float32")),
+            torch.from_numpy(self.captions1[index].astype("float32")),
+            torch.from_numpy(self.captions2[index].astype("float32")),
+            self.labels[index],
         )
 
     def __len__(self):
@@ -243,7 +310,16 @@ class DatasetDuplet2(AbstractDataset):
     Duplet dataset sample - img-txt (image and corresponding caption)
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization.
 
@@ -266,9 +342,9 @@ class DatasetDuplet2(AbstractDataset):
         return (
             index,
             (self.idxs[img_idx], self.idxs_cap[txt_idx]),
-            torch.from_numpy(self.images[img_idx].astype('float32')),
-            torch.from_numpy(self.captions[txt_idx].astype('float32')),
-            self.labels[img_idx]
+            torch.from_numpy(self.images[img_idx].astype("float32")),
+            torch.from_numpy(self.captions[txt_idx].astype("float32")),
+            self.labels[img_idx],
         )
 
     def __len__(self):
@@ -298,7 +374,16 @@ class DatasetTriplet2(AbstractDataset):
     Triplet dataset sample - img-txt-txt (image and 2 corresponding captions)
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization
 
@@ -308,7 +393,9 @@ class DatasetTriplet2(AbstractDataset):
         """
         super().__init__(images, captions, labels, idxs, captions_aug, images_aug, seed)
 
-        caption_idxs = select_idxs(len(self.captions), 2, 4, seed=self.seed) #4 instad of 5
+        caption_idxs = select_idxs(
+            len(self.captions), 2, 4, seed=self.seed
+        )  # 4 instad of 5
         caption_idxs = sorted(caption_idxs[0].extend(caption_idxs[1]))
         self.captions = self.captions[caption_idxs]
         self.idxs_cap = self.idxs_cap[caption_idxs]
@@ -324,10 +411,10 @@ class DatasetTriplet2(AbstractDataset):
         return (
             index,
             (self.idxs[img_idx], self.idxs_cap[txt1_idx], self.idxs_cap[txt2_idx]),
-            torch.from_numpy(self.images[img_idx].astype('float32')),
-            torch.from_numpy(self.captions[txt1_idx].astype('float32')),
-            torch.from_numpy(self.captions[txt2_idx].astype('float32')),
-            self.labels[img_idx]
+            torch.from_numpy(self.images[img_idx].astype("float32")),
+            torch.from_numpy(self.captions[txt1_idx].astype("float32")),
+            torch.from_numpy(self.captions[txt2_idx].astype("float32")),
+            self.labels[img_idx],
         )
 
     def __len__(self):
@@ -353,7 +440,16 @@ class DatasetTriplet2AugmentedTxt(AbstractDataset):
     Triplet dataset sample - img-txt-txt (image, caption and augmented caption)
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization
 
@@ -364,7 +460,9 @@ class DatasetTriplet2AugmentedTxt(AbstractDataset):
         """
         super().__init__(images, captions, labels, idxs, captions_aug, images_aug, seed)
 
-        caption_idxs = select_idxs(len(self.captions), 1, 4, seed=self.seed)[0] #4 instead of 5
+        caption_idxs = select_idxs(len(self.captions), 1, 4, seed=self.seed)[
+            0
+        ]  # 4 instead of 5
         self.captions = self.captions[caption_idxs]
         self.captions_aug = self.captions_aug[caption_idxs]
         self.idxs_cap = self.idxs_cap[caption_idxs]
@@ -379,10 +477,10 @@ class DatasetTriplet2AugmentedTxt(AbstractDataset):
         return (
             index,
             (self.idxs[index], self.idxs_cap[index], self.idxs_cap[index]),
-            torch.from_numpy(self.images[index].astype('float32')),
-            torch.from_numpy(self.captions[index].astype('float32')),
-            torch.from_numpy(self.captions_aug[index].astype('float32')),
-            self.labels[index]
+            torch.from_numpy(self.images[index].astype("float32")),
+            torch.from_numpy(self.captions[index].astype("float32")),
+            torch.from_numpy(self.captions_aug[index].astype("float32")),
+            self.labels[index],
         )
 
     def __len__(self):
@@ -398,7 +496,16 @@ class DatasetDuplet1(AbstractDataset):
     Duplet dataset sample - img-txt (image and corresponding caption)
     """
 
-    def __init__(self, images, captions, labels, idxs, captions_aug=None, images_aug=None, seed=42):
+    def __init__(
+        self,
+        images,
+        captions,
+        labels,
+        idxs,
+        captions_aug=None,
+        images_aug=None,
+        seed=42,
+    ):
         """
         Initialization.
 
@@ -408,7 +515,9 @@ class DatasetDuplet1(AbstractDataset):
         """
         super().__init__(images, captions, labels, idxs, captions_aug, images_aug, seed)
 
-        caption_idxs = select_idxs(len(self.captions), 1, 4, seed=self.seed)[0] # instead of 5 I put 4
+        caption_idxs = select_idxs(len(self.captions), 1, 4, seed=self.seed)[
+            0
+        ]  # instead of 5 I put 4
         self.captions = self.captions[caption_idxs]
 
     def __getitem__(self, index):
@@ -421,9 +530,9 @@ class DatasetDuplet1(AbstractDataset):
         return (
             index,
             (self.idxs[index], self.idxs_cap[index]),
-            torch.from_numpy(self.images[index].astype('float32')),
-            torch.from_numpy(self.captions[index].astype('float32')),
-            self.labels[index]
+            torch.from_numpy(self.images[index].astype("float32")),
+            torch.from_numpy(self.captions[index].astype("float32")),
+            self.labels[index],
         )
 
     def __len__(self):

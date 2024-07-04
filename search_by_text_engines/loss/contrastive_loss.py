@@ -6,7 +6,6 @@ import math
 
 
 class NTXentLoss(nn.Module):
-
     """
     Normalized Temperature-scaled Cross-entropy Loss (NTXent Loss).
 
@@ -18,15 +17,17 @@ class NTXentLoss(nn.Module):
         self.temperature = temperature
         self.eps = eps
 
-    def forward(self, *args, type='orig'):
-        if type == 'cross':
+    def forward(self, *args, type="orig"):
+        if type == "cross":
             return self.forward_cross_modal(*args)
-        if type == 'orig':
+        if type == "orig":
             return self.forward_orig(*args)
-        if type == 'both':
+        if type == "both":
             return self.forward_orig(*args), self.forward_cross_modal(*args)
         else:
-            raise Exception("Wrong NTXent loss type, must be: 'cross', 'orig' or 'both'")
+            raise Exception(
+                "Wrong NTXent loss type, must be: 'cross', 'orig' or 'both'"
+            )
 
     def forward_cross_modal(self, mod1, mod2):
         """
@@ -77,7 +78,9 @@ class NTXentLoss(nn.Module):
         # mask for cross-modal case, nullifies certain regions (see docstring)
         zeros = torch.zeros(mod1.shape[0], mod1.shape[0]).to(sim.device)
         ones = torch.ones(mod1.shape[0], mod1.shape[0]).to(sim.device)
-        mask = torch.hstack([torch.vstack([zeros, ones]), torch.vstack([ones, zeros])]).to(sim.device)
+        mask = torch.hstack(
+            [torch.vstack([zeros, ones]), torch.vstack([ones, zeros])]
+        ).to(sim.device)
 
         sim = sim * mask
 
