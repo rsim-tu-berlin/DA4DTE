@@ -4,7 +4,7 @@
 <a href="https://ai-cu.be/"><img src="DA4DTE_logo.png" style="font-size: 1rem; height: 6em; width: auto; padding-right: 30px;" /></a>
 <a href="https://bmwk.de"><img src="DA4DTE_partners.png" style="font-size: 1rem; height: 6em; width: auto; padding-right: 30px;"/></a>
 </div>
-&ensp;
+&ensp;****
 &ensp;
 
 [Demonstrator Precursor Digital Assistant Interface for Digital Twin Earth](http://da4dte.e-geos.earth/) (DA4DTE) is a project by the European Space Agency (ESA) that aims to simplify the usage of satellite data archives. In this repository, we gather code for the image-engines from [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin), capable of search-by-text, search-by-image as well as explaining corresponding decisions made by these models, and code for NLP-engines from [University of Athens](https://en.uoa.gr/), capable of knowledge-graph question answering for satellite image archives.
