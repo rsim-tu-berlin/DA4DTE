@@ -200,14 +200,14 @@ optional arguments:
 
 Examples:
 
-1. Train model for 64 bits hash codes generation using UCM dataset and default data preset
+1. Train model for 64 bits hash codes generation using vessel dataset and default data preset
 ```
-main.py --dataset vessel_dataset --preset default --bit 64 --tag my_model
+main.py --dataset vessel_dataset --preset default --bit 128 --tag my_model
 ```
 
 2. Run test for the model from previous example
 ```
-main.py --dataset vessel_dataset --preset default --bit 64 --tag my_model --test
+main.py --dataset vessel_dataset --preset default --bit 128 --tag my_model --test
 ```
 
 ---
