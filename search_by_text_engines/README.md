@@ -200,7 +200,7 @@ optional arguments:
 
 Examples:
 
-1. Train model for 64 bits hash codes generation using vessel dataset and default data preset
+1. Train model for 128 bits hash codes generation using vessel dataset and default data preset
 ```
 main.py --dataset vessel_dataset --preset default --bit 128 --tag my_model
 ```
