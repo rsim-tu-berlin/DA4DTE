@@ -1,0 +1,3 @@
+[submodule "task_interpreter"]
+	path = task_interpreter
+	url = https://github.com/MyrtoTs/task_interpreter
