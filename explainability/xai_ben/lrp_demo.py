@@ -1,11 +1,19 @@
 import os
+import numpy as np
+import torchvision.transforms as transforms
 import torch
 import matplotlib.pyplot as plt
+import tifffile
 
 from src.model import vit_base
-from src.utils import get_explanation, load_example_files, generate_caption, imshow
 from src.LRP import LRP
 
+from xai_misc import (
+    get_classwise_explanation,
+    raw_sentinel1_to_RGB_format,
+    raw_sentinel2_to_RGB_format,
+    raw_sentinel12_to_MODEL_format,
+)
 
 ########################################################
 # Initalization of constants, environment variables
@@ -45,98 +53,87 @@ lrp = LRP(backbone, EYE)
 
 
 ########################################################
+# Data handling:
+# - Load raw Sentinel1 and Sentinel2 image patches (from BEN)
+# - Convert to RGB format for visualization
+# - Convert to model input format
+########################################################
+
+sentinel12_img_path = "./raw_tifs/S2A_MSIL2A_20170613T101031_25_69.tif"
+sentinel12_img = tifffile.imread(sentinel12_img_path)
+
+# split stacked S2+S1 image into S1 and S2 parts
+sentinel1_img = sentinel12_img[:, :, 10:]
+sentinel2_img = sentinel12_img[:, :, :10]
+
+# move from numpy to torch tensor
+sentinel1_img = torch.from_numpy(sentinel1_img).float().to(dev)
+sentinel2_img = torch.from_numpy(sentinel2_img).float().to(dev)
+sentinel12_img = torch.from_numpy(sentinel12_img).float().to(dev)
+
+# Swap axes from 'Height x Width x Channel' -> 'Channel x Height x Width'
+sentinel1_img = sentinel1_img.permute(2, 1, 0)
+sentinel2_img = sentinel2_img.permute(2, 1, 0)
+sentinel12_img = sentinel12_img.permute(2, 1, 0)
+
+sentinel1_img_RGB = raw_sentinel1_to_RGB_format(sentinel1_img)
+sentinel2_img_RGB = raw_sentinel2_to_RGB_format(sentinel2_img)
+sentinel12_img_MODEL = raw_sentinel12_to_MODEL_format(sentinel12_img)
+
+########################################################
 # Generate explanations for an S1 input:
-# For the explanations we need two files:
-#   1) the Sentinel image patch (stacked S2 + S1) as a tensor to compute heatmaps
-#   2) 8bit image (pixel values in [0,255]) of a RGB-like version of the image patch, to be enriched by the heatmap
-#      (can be RGB-channels from S2 or a visualization of S1-channels, e.g. (VV, VH, VV/VH))
-#
-# For this demo, we load examples files from the ./examples folder via the function load_example_files(...),
-# but an actual use case may need to implement a project-specific function to load these files.
-#
-# The Sentinel image patch is fed into the LRP-explainer module with corresponding modality
-# flag and a heatmap is generated. The explanation is then a blended version of heatmap and RGB visual.
+
+# For this demo, we load example files (stacked S2+S1) from the ./raw_tifs/ folder, as they are provided from BEN.
+# The Sentinel image patch is fed into the LRP-explainer module with corresponding modality flag and heatmaps is generated.
 ########################################################
+
+
+def explanation_plot(sentinel12_img_MODEL, img_RGB, lrp, backbone, modality):
+    """Compute explanations for input and given modality and plots the results.
+
+    Args:
+        sentinel12_img_MODEL (torch.Tensor): 12-channel tensor, i.e. normalized stacked S2 + S1 channels
+        img_RGB (np.ndarray): 3-channel visualization of the input image
+        lrp (_type_):
+        backbone (_type_):
+        modality (str): either "s2" or "s1"
+    """
+
+    # generate classwise explanation
+    heatmap_cls_prob_list = get_classwise_explanation(
+        lrp, backbone, sentinel12_img_MODEL, modality=modality
+    )
+
+    fig, axs = plt.subplots(1, len(heatmap_cls_prob_list) + 1, figsize=(15, 5))
+    for ax in axs.ravel():
+        ax.axis("off")
+
+    axs[0].imshow(img_RGB)
+    axs[0].set_title("Original Input", fontsize=12)
+
+    for i, (heatmap, cls, prob) in enumerate(heatmap_cls_prob_list):
+        print(f"Top-{i} (class-names, probs):", cls, prob)
+
+        # blend heatmap and original image
+        alpha = np.clip(prob, 0.25, HEATMAP_WEIGHT)
+        heatmap_blended = (1 - alpha) * (img_RGB) + alpha * heatmap
+
+        axs[i + 1].imshow(heatmap_blended)
+        axs[i + 1].set_title(
+            f"{cls[:25] + ('...' if len(cls) > 25 else '')}", fontsize=12
+        )
+
+    return fig
+
+
 print("Demonstrate S1 explanation.")
-MODALITY = "s1"
-
-# load example files
-s1_patch_name, s2_patch_name = (
-    "S1B_IW_GRDH_1SDV_20170613T044822_34VER_69_34",
-    "S2A_MSIL2A_20170613T101032_69_34",
-)
-sentinel_img, s1_rgb, s2_rgb = load_example_files(s1_patch_name, s2_patch_name)
-sentinel_img = sentinel_img.to(dev)
-print(f"The sentinel_img has shape {sentinel_img.shape}, type {sentinel_img.dtype}")
-print(f"Corresponding RGB versions of S1/S2 have shape {s1_rgb.shape}")
-
-
-# plot original S1, without heatmap
-imshow(s1_rgb)
-plt.title("Original Input")
+fig = explanation_plot(sentinel12_img_MODEL, sentinel1_img_RGB, lrp, backbone, "s1")
+fig.savefig("s1_clswise_explained.png", bbox_inches="tight")
 plt.show()
-plt.savefig("s1_original.png", bbox_inches="tight")
 plt.clf()
 
-# generate explanation
-heatmap, topk_classes = get_explanation(lrp, backbone, sentinel_img, modality=MODALITY)
-
-# blend heatmap and original image
-heatmap_blended = (1 - HEATMAP_WEIGHT) * (s1_rgb / 255) + HEATMAP_WEIGHT * heatmap
-print("Top-k (class-names, probs):", topk_classes)
-
-
-# NOTE choose a caption that fits best into the UI / workflow
-caption = generate_caption(topk_classes, add_probability=True)
-# caption = generate_caption(topk_classes, add_probability=False)
-# caption = {'label': 'Relevant Areas', 'fontsize': 14}
-
-# plot explaination
-imshow(heatmap_blended)
-plt.title(**caption)
+print("Demonstrate S2 explanation.")
+fig = explanation_plot(sentinel12_img_MODEL, sentinel2_img_RGB, lrp, backbone, "s2")
+fig.savefig("s2_clswise_explained.png", bbox_inches="tight")
 plt.show()
-plt.savefig("s1_explained.png", bbox_inches="tight")
-plt.clf()
-
-########################################################
-# Generate explanations for an S2 input, similar to S1-demonstration above but
-# we adjust variables to select s2-explanation
-########################################################
-print("\nDemonstrate S2 explanation.")
-MODALITY = "s2"
-
-# load example files
-s1_patch_name, s2_patch_name = (
-    "S1B_IW_GRDH_1SDV_20170717T064605_29UPV_70_10",
-    "S2A_MSIL2A_20170717T113321_70_10",
-)
-sentinel_img, s1_rgb, s2_rgb = load_example_files(s1_patch_name, s2_patch_name)
-sentinel_img = sentinel_img.to(dev)
-print(f"The sentinel_img has shape {sentinel_img.shape}, type {sentinel_img.dtype}")
-print(f"Corresponding RGB versions of S1/S2 have shape {s1_rgb.shape}")
-
-# plot original S1, without heatmap
-imshow(s2_rgb)
-plt.title("Original Input")
-plt.show()
-plt.savefig("s2_original.png", bbox_inches="tight")
-plt.clf()
-
-# generate explanation
-heatmap, topk_classes = get_explanation(lrp, backbone, sentinel_img, modality=MODALITY)
-
-# blend heatmap and original image
-heatmap_blended = (1 - HEATMAP_WEIGHT) * (s2_rgb / 255) + HEATMAP_WEIGHT * heatmap
-print("Top-k (class-names, probs):", topk_classes)
-
-# NOTE choose a caption that fits best into the UI / workflow
-caption = generate_caption(topk_classes, add_probability=True)
-# caption = generate_caption(topk_classes, add_probability=False)
-# caption = {'label': 'Relevant Areas', 'fontsize': 14}
-
-# plot explaination
-imshow(heatmap_blended)
-plt.title(**caption)
-plt.show()
-plt.savefig("s2_explained.png", bbox_inches="tight")
 plt.clf()
