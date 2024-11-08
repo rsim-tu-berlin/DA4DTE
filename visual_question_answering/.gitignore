@@ -1,0 +1,11 @@
+# .gitignore for PyTorch Project
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and Checkpoints
+logs/
+checkpoints/

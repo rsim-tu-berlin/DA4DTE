@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VQA for DA4DTE</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            color: white;
+            font-size: 36px;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        input {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div onclick="window.location.href='/'">
+            VQA for DA4DTE
+        </div>
+    </header>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label for="question">Enter your question:</label>
+        <input type="text" name="string" id="string" required>
+        
+        <label for="image">Upload an image:</label>
+        <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png, .tif, .tiff" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
