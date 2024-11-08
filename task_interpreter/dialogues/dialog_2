@@ -1,0 +1,27 @@
+[
+    {
+        "input": "Give me similar images.",
+        "image": true,
+        "answer": " IMAGE_RETRIEVAL_BY_IMAGE answer [Link]"
+    },
+    {
+        "input": "Show me sentinel-1 images.",
+        "image": true,
+        "answer": " Sentinel-1_IMAGE_RETRIEVAL_BY_IMAGE answer [Link]"
+    },
+    {
+        "input": "give me senilen-2 images.",
+        "image": true,
+        "answer": " Sentinel-2_IMAGE_RETRIEVAL_BY_IMAGE answer [Link]"
+    },
+    {
+        "input": "thank you!",
+        "image": false,
+        "answer": "You're welcome! If you have any more questions about Earth Observation data, feel free to ask."
+    },
+    {
+        "input": "exit",
+        "image": false,
+        "answer": "Goodbye! If you have any more questions in the future, feel free to ask. Have a great day!"
+    }
+]

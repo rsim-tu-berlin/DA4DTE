@@ -1,0 +1,422 @@
+[
+    {
+        "request": "Give me 20 images without vessels.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Show me a satellite image with sixteen vessels.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Show me a satellite image with only one vessel located at the upper-right",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Retrieve 10 images where one vessel is located at the right and one vessel is located at the lower-right",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Give me an image with five vessels located in the center",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Show me a satellite image with only one vessel located at the upper.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "A satellite image with one vessel located at the left one vessel located at the center and two vessels are located at the lower",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "An image with two vessels located at the lower-right.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Show me an image with two vessels near the coast.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Retrieve an image with two boats in the harbour.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "An image with seventy-two vessels near the coast.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "I want 10 images with one small boat.",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Show 5 images with one small boat and a medium-sized boat",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Show me a satellite image with two very small boats",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Give me an image with three very small baots and two medium-sized boats",
+        "category": "IMAGE_RETRIEVAL_BY_CAPTION"
+    },
+    {
+        "request": "Give me 5 pictures of rivers in France.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "I want 3 images with vegetation percentage over 80%.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Give me images with snow coverage over 2%.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Give me ten images with 25% cloud coverage from the sentinel-2b platform.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Give me ten S2MSI2A products.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Find 12 sentinel-2 images with cloud coverage over 15%, vegetation percentage less than 10%.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Give me 3 pictures of rivers in Italy with vegetation coverage over 20% after May 2020.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Find Sentinel-2 data over the Egadi Islands with no clouds and lots of vessels.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Retrieve Sentinel-2 and Sentinel-1 images containing oil-spills in Mexican Gulf.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Retrieve 10 Sentinel-2 images containing marine litters in the Pacific oceans.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Find cloud-free Sentinel-2 images over the ten cities in india with the highest building density",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Find Sentinel-2 images of the 100km radius area in North America which has the most corn production",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Retrieve images of Sentinel-2 of intense storms over Italy, on the Latium coast",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "I want to see satellite images of the Alps Mountain Range in Europe around February 1st, 2021, with a snow coverage percentage of about 50%.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Show me satellite images of Hokkaido, Japan during December 2023, indicating around 90% snow coverage.",
+        "category": "IMAGE_RETRIEVAL_BY_METADATA"
+    },
+    {
+        "request": "Where is the Dorset county located?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "What is the total area of town Ballinasloe?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "What is the height of the Lower Ghaghri Falls?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Do Cambridge and Oxford intersect?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Which lakes are in the Epirus region?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Which streams cross Oxfordshire?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Which lakes border villages?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Which forests in Essex are west of a lake?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "In Tullyhaw Barony, which streams are west of a townland?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Which municipalities that belong to Periferiaki Enotita Nison and have less than 3000 residents individually, contain islands?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "What is the name and the area of the parks that are in Wards of Northern Ireland that are east of Dublin?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "What is the total area of lakes in Monaghan?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "How many islands are within a Greek region?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Which forest is nearest to the city of Belfast?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Which city in California has the most hospitals?",
+        "category": "GEOSPATIAL_QA"
+    },
+    {
+        "request": "Is a water area present?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is a grass area present?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Are there less residential buildings than roads?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is a residential area present?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is a road on the right of a landfill present?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Are there less residential buildings than landfills?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Are there less roads than buildings?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is there a medium commercial building?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is there a commercial building at the bottom of a water area?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is there a commercial building on the right of the road?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is there a road?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is there a square building?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is a depot present?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is a salt pond present?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Is a garage present?",
+        "category": "BINARY_VISUAL_QA"
+    },
+    {
+        "request": "Identify and extract all commercial buildings",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract all medium rectangular buildings.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Isolate residential buildings.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract large residential buildings",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract meadows.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Isolate landfills.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract farmyards.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Identify and extract recreation grounds.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract water bodies from this image.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract rivers and lakes.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Isolate water areas.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "I want you to extract rectangular allotments.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Isolate very large vessels.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract all boats and small vessels.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "Extract roads present in the image.",
+        "category": "IMAGE_SEGMENTATION"
+    },
+    {
+        "request": "How many recreation grounds are there?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the amount of rectangular allotments?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "How many meadows are there in the image?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the amount of farmyards?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "How many roads are there in the image?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the amount of residential buildings in the image?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "How many small buildings at the top of a water area are there in the image?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "How many square residential buildings are there?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the amount of residential buildings on the right of the road?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the amount of water areas?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "How many residential areas are there?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the amount of rectangular commercial buildings?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the number of small residential buildings?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "How many large residential buildings are there?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "What is the number of circular residential buildings?",
+        "category": "OBJECT_COUNTING"
+    },
+    {
+        "request": "Retrieve 5 similar images",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Find 10 satellite images akin to this.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Give me 10 images resembling the one I share.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Fetch 10 images that are analogous to this one.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Retrieve a satellite image that closely resembles the one provided.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Find 20 satellite images that bear similarity to this one.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Give me a similar image.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Search for similar images.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Fetch 3 Sentinel-2 images resembling this.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Obtain 10 Sentinel-1 images that match this one.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Obtain 10 images that closely resemble the one I offer.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "I want 2 similar images.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Retrieve similar satellite images.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Show me images resembling this one.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    },
+    {
+        "request": "Give me 5 images that look like this.",
+        "category": "IMAGE_RETRIEVAL_BY_IMAGE"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "input": "I am sad.",
+        "image": false,
+        "answer": "I'm sorry to hear that you're feeling sad. If you have any questions or need assistance related to Earth Observation data, feel free to ask."
+    },
+    {
+        "input": "Give me pictures of Athens.",
+        "image": false,
+        "answer": " IMAGE_RETRIEVAL_BY_METADATA answer [Link]"
+    },
+    {
+        "input": "How many rivers are there in France?",
+        "image": false,
+        "answer": " GEOSPATIAL_QA answer [Link]"
+    },
+    {
+        "input": "Show me similar images.",
+        "image": true,
+        "answer": " IMAGE_RETRIEVAL_BY_IMAGE answer [Link]"
+    },
+    {
+        "input": "Is there a ricefield in this image?",
+        "image": true,
+        "answer": " BINARY_VISUAL_QA answer [Link]"
+    },
+    {
+        "input": "How many buildings are there?",
+        "image": true,
+        "answer": " OBJECT_COUNTING answer [Link]"
+    },
+    {
+        "input": "Give me an image with small vessels.",
+        "image": false,
+        "answer": " IMAGE_RETRIEVAL_BY_CAPTION answer [Link]"
+    },
+    {
+        "input": "Give me an image with rivers.",
+        "image": false,
+        "answer": "My 'Search by Caption' engine is designed to help you specifically with image searches related to vessels."
+    },
+    {
+        "input": "exit",
+        "image": false,
+        "answer": "If you have any more questions in the future, feel free to ask. Have a great day! Goodbye!"
+    }
+]
