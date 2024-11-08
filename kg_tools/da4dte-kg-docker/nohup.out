@@ -1,0 +1,195 @@
+./graphdb-10.6.3/bin/graphdb: line 75: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[INFO ] 2024-05-15 14:31:31,472 [main | c.o.g.Config] Using 'file:/graphdb-10.6.3/conf/logback.xml' as logback's configuration file
+[INFO ] 2024-05-15 14:31:31,625 [main | c.o.g.s.GraphDB] Starting GraphDB in workbench mode.
+[INFO ] 2024-05-15 14:31:37,075 [main | c.o.g.Config] GraphDB Home directory: /graphdb-10.6.3
+[INFO ] 2024-05-15 14:31:37,076 [main | c.o.g.Config] GraphDB Config directory: /graphdb-10.6.3/conf
+[INFO ] 2024-05-15 14:31:37,076 [main | c.o.g.Config] GraphDB Data directory: /graphdb-10.6.3/data
+[INFO ] 2024-05-15 14:31:37,076 [main | c.o.g.Config] GraphDB Work directory: /graphdb-10.6.3/work
+[INFO ] 2024-05-15 14:31:37,076 [main | c.o.g.Config] GraphDB Logs directory: /graphdb-10.6.3/logs
+[INFO ] 2024-05-15 14:31:37,373 [main | c.o.g.r.s.SecurityUtil] Cluster gRPC server security is disabled
+[INFO ] 2024-05-15 14:31:37,539 [main | c.o.f.c.s.r.GraphDBRpcServer] Started gRPC server on port 7300 successfully
+[INFO ] 2024-05-15 14:31:39,085 [main | c.o.g.s.GraphDB] Started GraphDB in workbench mode at port 7200.
+[INFO ] 2024-05-15 14:31:43,713 [repository-manager-0 | c.o.t.OwlimSchemaRepository] Version: 10.6, revision: -2048891683
+[INFO ] 2024-05-15 14:31:43,713 [repository-manager-0 | c.o.t.OwlimSchemaRepository] Build date: Fri Apr 19 12:30:10 GMT 2024
+[INFO ] 2024-05-15 14:31:43,716 [repository-manager-0 | c.o.t.OwlimSchemaRepository] Started repository da4dte_final in READ/WRITE mode.
+[INFO ] 2024-05-15 14:31:43,717 [repository-manager-0 | c.o.GraphDBConfigParameters] Cache pages for tuples: 7829
+[INFO ] 2024-05-15 14:31:43,717 [repository-manager-0 | c.o.GraphDBConfigParameters] Cache pages for predicates: 1118
+[INFO ] 2024-05-15 14:31:43,717 [repository-manager-0 | c.o.t.OwlimSchemaRepository] Configured parameter graphdb.engine.onheap.allocation to true
+[INFO ] 2024-05-15 14:31:43,719 [repository-manager-0 | c.o.t.i.FileSystemHealth] Active locations health:
+[INFO ] 2024-05-15 14:31:43,720 [repository-manager-0 | c.o.t.i.FileSystemHealth] /graphdb-10.6.3/data/repositories/da4dte_final: 40.0% (OK)
+[INFO ] 2024-05-15 14:31:43,720 [repository-manager-0 | c.o.t.i.FileSystemHealth] /graphdb-10.6.3/logs: 40.0% (OK)
+[INFO ] 2024-05-15 14:31:43,720 [repository-manager-0 | c.o.t.i.FileSystemHealth] /graphdb-10.6.3/work: 40.0% (OK)
+[INFO ] 2024-05-15 14:31:43,730 [repository-manager-0 | c.o.t.e.EntityPoolFactory] Using entity pool implementation: transactional-disk
+[INFO ] 2024-05-15 14:31:43,753 [repository-manager-0 | c.o.t.e.i.m.PersistedHashMap] Restoring entity hash table...
+[INFO ] 2024-05-15 14:31:43,941 [repository-manager-0 | c.o.t.e.i.m.PersistedHashMap] Restored 12125776 entities allocating 144.0 MB
+[INFO ] 2024-05-15 14:31:43,943 [repository-manager-0 | c.o.t.e.i.m.PersistedHashMap] Done in 188 ms.
+[INFO ] 2024-05-15 14:31:48,151 [repository-manager-0 | c.o.t.u.l.LimitedObjectCacheFactory] Using LRU cache type: synch
+[WARN ] 2024-05-15 14:32:21,180 [repository-manager-0 | c.o.t.b.AVLRepository] Check whether all predicates in the predicate statistics have correct collection sizes.
+[INFO ] 2024-05-15 14:32:21,221 [repository-manager-0 | c.o.t.b.AVLRepository] Checked 53 entries in predicate statistics
+[WARN ] 2024-05-15 14:32:21,221 [repository-manager-0 | c.o.t.b.AVLRepository] Check for missing statement predicates in the predicate statistics
+[WARN ] 2024-05-15 14:32:21,227 [repository-manager-0 | c.o.t.OwlimSchemaRepository] Rule list configuration present, it will override all other rule sets parameters!
+[INFO ] 2024-05-15 14:32:21,236 [repository-manager-0 | c.o.l.LicenseRegistry] License configuration: Embedded license
+[INFO ] 2024-05-15 14:32:21,236 [repository-manager-0 | c.o.l.LicenseRegistry] License file: jar:file:/graphdb-10.6.3/lib/graphdb-runtime-10.6.3.jar!/GRAPHDB_LITE.license
+[INFO ] 2024-05-15 14:32:21,237 [repository-manager-0 | c.o.l.LicenseRegistry] Product:                 GRAPHDB_LITE
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Capabilities:            [LUCENE_CONNECTOR]
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Usage restriction:       null
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Licensee:                Freeware
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Permitted use:           THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Version:                 10.6
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Expiry date:             none
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Latest publication date: none
+[INFO ] 2024-05-15 14:32:21,238 [repository-manager-0 | c.o.l.LicenseRegistry] Max CPU cores:           1
+[INFO ] 2024-05-15 14:32:21,278 [repository-manager-0 | c.o.t.InferencerFactory] ruleSet=rdfsplus-optimized, partialRdfs=false
+[INFO ] 2024-05-15 14:32:21,344 [repository-manager-0 | c.o.t.OwlimSchemaRepository] Searching for plugins available in the classpath...
+[INFO ] 2024-05-15 14:32:21,358 [repository-manager-0 | c.o.GraphDBConfigParameters] Reading external plugins from /graphdb-10.6.3/lib/plugins
+[INFO ] 2024-05-15 14:32:21,358 [repository-manager-0 | c.o.t.OwlimSchemaRepository] Registering external plugins...
+[INFO ] 2024-05-15 14:32:21,477 [repository-manager-0 | c.o.t.p.g.FunctionLoader] Registered 1 functions from package com.ontotext.trree.plugin.geo.
+[INFO ] 2024-05-15 14:32:21,563 [repository-manager-0 | c.o.t.s.i.PluginManager] Initializing plugins: GeoSPARQL, autocomplete, change-tracking, chatgpt-retrieval-connector, dependencies-plugin, direct, elasticsearch-connector, entity-change, expose-entity, geospatial, history, kafka-connector, literals-index, lucene-connector, magic-predicates, mongodb, notifications, notifications-logger, opensearch-connector, plugincontrol, proof, rdfrank, script, sequences, similarity, solr-connector, sparql-mm, sparql-template, text-mining, tx-rollback, utils
+[INFO ] 2024-05-15 14:32:22,004 [repository-manager-0 | c.o.t.g.FunctionLoader] Registered 50 functions from package com.useekm.geosparql.
+[INFO ] 2024-05-15 14:32:22,006 [repository-manager-0 | c.o.t.p.a.AutocompletePluginUtils] >>>>>>>> AutocompletePlugin: No configuration file found at /graphdb-10.6.3/data/repositories/da4dte_final/storage/autocomplete/v2/config.properties. Assuming default options for plugin.
+[INFO ] 2024-05-15 14:32:22,033 [repository-manager-0 | c.o.t.p.g.GeoSpatialPlugin] Plugin:geospatial initialized
+[INFO ] 2024-05-15 14:32:22,038 [repository-manager-0 | c.o.t.e.EntityPoolFactory] Using entity pool implementation: transactional-disk
+[INFO ] 2024-05-15 14:32:22,040 [repository-manager-0 | c.o.c.AbstractParameter] Configured parameter 'storage-folder' to value '/graphdb-10.6.3/data/repositories/da4dte_final/storage/history/tx-metadata'
+[INFO ] 2024-05-15 14:32:22,041 [repository-manager-0 | c.o.c.AbstractParameter] Configured parameter 'entity-index-size' to value '97.7K'
+[INFO ] 2024-05-15 14:32:22,042 [repository-manager-0 | c.o.t.e.i.m.PersistedHashMap] Restoring entity hash table...
+[INFO ] 2024-05-15 14:32:22,048 [repository-manager-0 | c.o.t.e.i.m.PersistedHashMap] Restored 0 entity allocating 12.0 MB
+[INFO ] 2024-05-15 14:32:22,049 [repository-manager-0 | c.o.t.e.i.m.PersistedHashMap] Done in 6 ms.
+[INFO ] 2024-05-15 14:32:22,136 [repository-manager-0 | c.o.p.literals-index] Full-text search functionality is disabled
+[INFO ] 2024-05-15 14:32:22,300 [repository-manager-0 | c.o.p.literals-index] Rebuilding literals indexes. Starting from id: 70
+[INFO ] 2024-05-15 14:32:22,384 [repository-manager-0 | c.o.p.literals-index] 100000/12125776 done
+[INFO ] 2024-05-15 14:32:22,410 [repository-manager-0 | c.o.p.literals-index] 200000/12125776 done
+[INFO ] 2024-05-15 14:32:22,430 [repository-manager-0 | c.o.p.literals-index] 300000/12125776 done
+[INFO ] 2024-05-15 14:32:22,451 [repository-manager-0 | c.o.p.literals-index] 400000/12125776 done
+[INFO ] 2024-05-15 14:32:22,472 [repository-manager-0 | c.o.p.literals-index] 500000/12125776 done
+[INFO ] 2024-05-15 14:32:23,111 [repository-manager-0 | c.o.p.literals-index] 600000/12125776 done
+[INFO ] 2024-05-15 14:32:23,222 [repository-manager-0 | c.o.p.literals-index] 700000/12125776 done
+[INFO ] 2024-05-15 14:32:23,361 [repository-manager-0 | c.o.p.literals-index] 800000/12125776 done
+[INFO ] 2024-05-15 14:32:23,510 [repository-manager-0 | c.o.p.literals-index] 900000/12125776 done
+[INFO ] 2024-05-15 14:32:23,610 [repository-manager-0 | c.o.p.literals-index] 1000000/12125776 done
+[INFO ] 2024-05-15 14:32:23,711 [repository-manager-0 | c.o.p.literals-index] 1100000/12125776 done
+[INFO ] 2024-05-15 14:32:23,859 [repository-manager-0 | c.o.p.literals-index] 1200000/12125776 done
+[INFO ] 2024-05-15 14:32:23,984 [repository-manager-0 | c.o.p.literals-index] 1300000/12125776 done
+[INFO ] 2024-05-15 14:32:24,111 [repository-manager-0 | c.o.p.literals-index] 1400000/12125776 done
+[INFO ] 2024-05-15 14:32:24,243 [repository-manager-0 | c.o.p.literals-index] 1500000/12125776 done
+[INFO ] 2024-05-15 14:32:24,318 [repository-manager-0 | c.o.p.literals-index] 1600000/12125776 done
+[INFO ] 2024-05-15 14:32:24,491 [repository-manager-0 | c.o.p.literals-index] 1700000/12125776 done
+[INFO ] 2024-05-15 14:32:24,678 [repository-manager-0 | c.o.p.literals-index] 1800000/12125776 done
+[INFO ] 2024-05-15 14:32:24,744 [repository-manager-0 | c.o.p.literals-index] 1900000/12125776 done
+[INFO ] 2024-05-15 14:32:24,770 [repository-manager-0 | c.o.p.literals-index] 2000000/12125776 done
+[INFO ] 2024-05-15 14:32:24,810 [repository-manager-0 | c.o.p.literals-index] 2100000/12125776 done
+[INFO ] 2024-05-15 14:32:25,666 [repository-manager-0 | c.o.p.literals-index] 2200000/12125776 done
+[INFO ] 2024-05-15 14:32:25,788 [repository-manager-0 | c.o.p.literals-index] 2300000/12125776 done
+[INFO ] 2024-05-15 14:32:25,849 [repository-manager-0 | c.o.p.literals-index] 2400000/12125776 done
+[INFO ] 2024-05-15 14:32:25,909 [repository-manager-0 | c.o.p.literals-index] 2500000/12125776 done
+[INFO ] 2024-05-15 14:32:25,967 [repository-manager-0 | c.o.p.literals-index] 2600000/12125776 done
+[INFO ] 2024-05-15 14:32:26,026 [repository-manager-0 | c.o.p.literals-index] 2700000/12125776 done
+[INFO ] 2024-05-15 14:32:26,086 [repository-manager-0 | c.o.p.literals-index] 2800000/12125776 done
+[INFO ] 2024-05-15 14:32:26,146 [repository-manager-0 | c.o.p.literals-index] 2900000/12125776 done
+[INFO ] 2024-05-15 14:32:26,205 [repository-manager-0 | c.o.p.literals-index] 3000000/12125776 done
+[INFO ] 2024-05-15 14:32:26,264 [repository-manager-0 | c.o.p.literals-index] 3100000/12125776 done
+[INFO ] 2024-05-15 14:32:26,322 [repository-manager-0 | c.o.p.literals-index] 3200000/12125776 done
+[INFO ] 2024-05-15 14:32:26,387 [repository-manager-0 | c.o.p.literals-index] 3300000/12125776 done
+[INFO ] 2024-05-15 14:32:26,448 [repository-manager-0 | c.o.p.literals-index] 3400000/12125776 done
+[INFO ] 2024-05-15 14:32:26,510 [repository-manager-0 | c.o.p.literals-index] 3500000/12125776 done
+[INFO ] 2024-05-15 14:32:26,572 [repository-manager-0 | c.o.p.literals-index] 3600000/12125776 done
+[INFO ] 2024-05-15 14:32:26,633 [repository-manager-0 | c.o.p.literals-index] 3700000/12125776 done
+[INFO ] 2024-05-15 14:32:26,692 [repository-manager-0 | c.o.p.literals-index] 3800000/12125776 done
+[INFO ] 2024-05-15 14:32:26,754 [repository-manager-0 | c.o.p.literals-index] 3900000/12125776 done
+[INFO ] 2024-05-15 14:32:26,817 [repository-manager-0 | c.o.p.literals-index] 4000000/12125776 done
+[INFO ] 2024-05-15 14:32:26,881 [repository-manager-0 | c.o.p.literals-index] 4100000/12125776 done
+[INFO ] 2024-05-15 14:32:26,944 [repository-manager-0 | c.o.p.literals-index] 4200000/12125776 done
+[INFO ] 2024-05-15 14:32:27,006 [repository-manager-0 | c.o.p.literals-index] 4300000/12125776 done
+[INFO ] 2024-05-15 14:32:27,070 [repository-manager-0 | c.o.p.literals-index] 4400000/12125776 done
+[INFO ] 2024-05-15 14:32:27,134 [repository-manager-0 | c.o.p.literals-index] 4500000/12125776 done
+[INFO ] 2024-05-15 14:32:27,295 [repository-manager-0 | c.o.p.literals-index] 4600000/12125776 done
+[INFO ] 2024-05-15 14:32:27,394 [repository-manager-0 | c.o.p.literals-index] 4700000/12125776 done
+[INFO ] 2024-05-15 14:32:27,491 [repository-manager-0 | c.o.p.literals-index] 4800000/12125776 done
+[INFO ] 2024-05-15 14:32:27,584 [repository-manager-0 | c.o.p.literals-index] 4900000/12125776 done
+[INFO ] 2024-05-15 14:32:27,685 [repository-manager-0 | c.o.p.literals-index] 5000000/12125776 done
+[INFO ] 2024-05-15 14:32:27,797 [repository-manager-0 | c.o.p.literals-index] 5100000/12125776 done
+[INFO ] 2024-05-15 14:32:27,893 [repository-manager-0 | c.o.p.literals-index] 5200000/12125776 done
+[INFO ] 2024-05-15 14:32:27,984 [repository-manager-0 | c.o.p.literals-index] 5300000/12125776 done
+[INFO ] 2024-05-15 14:32:28,077 [repository-manager-0 | c.o.p.literals-index] 5400000/12125776 done
+[INFO ] 2024-05-15 14:32:28,167 [repository-manager-0 | c.o.p.literals-index] 5500000/12125776 done
+[INFO ] 2024-05-15 14:32:28,261 [repository-manager-0 | c.o.p.literals-index] 5600000/12125776 done
+[INFO ] 2024-05-15 14:32:28,363 [repository-manager-0 | c.o.p.literals-index] 5700000/12125776 done
+[INFO ] 2024-05-15 14:32:28,460 [repository-manager-0 | c.o.p.literals-index] 5800000/12125776 done
+[INFO ] 2024-05-15 14:32:28,561 [repository-manager-0 | c.o.p.literals-index] 5900000/12125776 done
+[INFO ] 2024-05-15 14:32:28,655 [repository-manager-0 | c.o.p.literals-index] 6000000/12125776 done
+[INFO ] 2024-05-15 14:32:28,750 [repository-manager-0 | c.o.p.literals-index] 6100000/12125776 done
+[INFO ] 2024-05-15 14:32:28,842 [repository-manager-0 | c.o.p.literals-index] 6200000/12125776 done
+[INFO ] 2024-05-15 14:32:28,945 [repository-manager-0 | c.o.p.literals-index] 6300000/12125776 done
+[INFO ] 2024-05-15 14:32:29,040 [repository-manager-0 | c.o.p.literals-index] 6400000/12125776 done
+[INFO ] 2024-05-15 14:32:29,135 [repository-manager-0 | c.o.p.literals-index] 6500000/12125776 done
+[INFO ] 2024-05-15 14:32:29,228 [repository-manager-0 | c.o.p.literals-index] 6600000/12125776 done
+[INFO ] 2024-05-15 14:32:29,326 [repository-manager-0 | c.o.p.literals-index] 6700000/12125776 done
+[INFO ] 2024-05-15 14:32:29,418 [repository-manager-0 | c.o.p.literals-index] 6800000/12125776 done
+[INFO ] 2024-05-15 14:32:29,514 [repository-manager-0 | c.o.p.literals-index] 6900000/12125776 done
+[INFO ] 2024-05-15 14:32:29,607 [repository-manager-0 | c.o.p.literals-index] 7000000/12125776 done
+[INFO ] 2024-05-15 14:32:29,701 [repository-manager-0 | c.o.p.literals-index] 7100000/12125776 done
+[INFO ] 2024-05-15 14:32:29,794 [repository-manager-0 | c.o.p.literals-index] 7200000/12125776 done
+[INFO ] 2024-05-15 14:32:29,888 [repository-manager-0 | c.o.p.literals-index] 7300000/12125776 done
+[INFO ] 2024-05-15 14:32:29,979 [repository-manager-0 | c.o.p.literals-index] 7400000/12125776 done
+[INFO ] 2024-05-15 14:32:30,073 [repository-manager-0 | c.o.p.literals-index] 7500000/12125776 done
+[INFO ] 2024-05-15 14:32:30,180 [repository-manager-0 | c.o.p.literals-index] 7600000/12125776 done
+[INFO ] 2024-05-15 14:32:30,274 [repository-manager-0 | c.o.p.literals-index] 7700000/12125776 done
+[INFO ] 2024-05-15 14:32:30,367 [repository-manager-0 | c.o.p.literals-index] 7800000/12125776 done
+[INFO ] 2024-05-15 14:32:30,457 [repository-manager-0 | c.o.p.literals-index] 7900000/12125776 done
+[INFO ] 2024-05-15 14:32:30,548 [repository-manager-0 | c.o.p.literals-index] 8000000/12125776 done
+[INFO ] 2024-05-15 14:32:30,640 [repository-manager-0 | c.o.p.literals-index] 8100000/12125776 done
+[INFO ] 2024-05-15 14:32:30,734 [repository-manager-0 | c.o.p.literals-index] 8200000/12125776 done
+[INFO ] 2024-05-15 14:32:30,826 [repository-manager-0 | c.o.p.literals-index] 8300000/12125776 done
+[INFO ] 2024-05-15 14:32:30,924 [repository-manager-0 | c.o.p.literals-index] 8400000/12125776 done
+[INFO ] 2024-05-15 14:32:31,017 [repository-manager-0 | c.o.p.literals-index] 8500000/12125776 done
+[INFO ] 2024-05-15 14:32:31,108 [repository-manager-0 | c.o.p.literals-index] 8600000/12125776 done
+[INFO ] 2024-05-15 14:32:31,198 [repository-manager-0 | c.o.p.literals-index] 8700000/12125776 done
+[INFO ] 2024-05-15 14:32:31,301 [repository-manager-0 | c.o.p.literals-index] 8800000/12125776 done
+[INFO ] 2024-05-15 14:32:31,392 [repository-manager-0 | c.o.p.literals-index] 8900000/12125776 done
+[INFO ] 2024-05-15 14:32:31,485 [repository-manager-0 | c.o.p.literals-index] 9000000/12125776 done
+[INFO ] 2024-05-15 14:32:31,574 [repository-manager-0 | c.o.p.literals-index] 9100000/12125776 done
+[INFO ] 2024-05-15 14:32:31,667 [repository-manager-0 | c.o.p.literals-index] 9200000/12125776 done
+[INFO ] 2024-05-15 14:32:31,764 [repository-manager-0 | c.o.p.literals-index] 9300000/12125776 done
+[INFO ] 2024-05-15 14:32:31,859 [repository-manager-0 | c.o.p.literals-index] 9400000/12125776 done
+[INFO ] 2024-05-15 14:32:31,950 [repository-manager-0 | c.o.p.literals-index] 9500000/12125776 done
+[INFO ] 2024-05-15 14:32:32,044 [repository-manager-0 | c.o.p.literals-index] 9600000/12125776 done
+[INFO ] 2024-05-15 14:32:32,136 [repository-manager-0 | c.o.p.literals-index] 9700000/12125776 done
+[INFO ] 2024-05-15 14:32:32,227 [repository-manager-0 | c.o.p.literals-index] 9800000/12125776 done
+[INFO ] 2024-05-15 14:32:32,318 [repository-manager-0 | c.o.p.literals-index] 9900000/12125776 done
+[INFO ] 2024-05-15 14:32:32,420 [repository-manager-0 | c.o.p.literals-index] 10000000/12125776 done
+[INFO ] 2024-05-15 14:32:32,515 [repository-manager-0 | c.o.p.literals-index] 10100000/12125776 done
+[INFO ] 2024-05-15 14:32:32,611 [repository-manager-0 | c.o.p.literals-index] 10200000/12125776 done
+[INFO ] 2024-05-15 14:32:32,704 [repository-manager-0 | c.o.p.literals-index] 10300000/12125776 done
+[INFO ] 2024-05-15 14:32:32,795 [repository-manager-0 | c.o.p.literals-index] 10400000/12125776 done
+[INFO ] 2024-05-15 14:32:32,887 [repository-manager-0 | c.o.p.literals-index] 10500000/12125776 done
+[INFO ] 2024-05-15 14:32:32,981 [repository-manager-0 | c.o.p.literals-index] 10600000/12125776 done
+[INFO ] 2024-05-15 14:32:33,073 [repository-manager-0 | c.o.p.literals-index] 10700000/12125776 done
+[INFO ] 2024-05-15 14:32:33,165 [repository-manager-0 | c.o.p.literals-index] 10800000/12125776 done
+[INFO ] 2024-05-15 14:32:33,255 [repository-manager-0 | c.o.p.literals-index] 10900000/12125776 done
+[INFO ] 2024-05-15 14:32:33,351 [repository-manager-0 | c.o.p.literals-index] 11000000/12125776 done
+[INFO ] 2024-05-15 14:32:33,444 [repository-manager-0 | c.o.p.literals-index] 11100000/12125776 done
+[INFO ] 2024-05-15 14:32:33,536 [repository-manager-0 | c.o.p.literals-index] 11200000/12125776 done
+[INFO ] 2024-05-15 14:32:33,641 [repository-manager-0 | c.o.p.literals-index] 11300000/12125776 done
+[INFO ] 2024-05-15 14:32:33,733 [repository-manager-0 | c.o.p.literals-index] 11400000/12125776 done
+[INFO ] 2024-05-15 14:32:33,824 [repository-manager-0 | c.o.p.literals-index] 11500000/12125776 done
+[INFO ] 2024-05-15 14:32:33,914 [repository-manager-0 | c.o.p.literals-index] 11600000/12125776 done
+[INFO ] 2024-05-15 14:32:34,002 [repository-manager-0 | c.o.p.literals-index] 11700000/12125776 done
+[INFO ] 2024-05-15 14:32:34,092 [repository-manager-0 | c.o.p.literals-index] 11800000/12125776 done
+[INFO ] 2024-05-15 14:32:34,192 [repository-manager-0 | c.o.p.literals-index] 11900000/12125776 done
+[INFO ] 2024-05-15 14:32:34,284 [repository-manager-0 | c.o.p.literals-index] 12000000/12125776 done
+[INFO ] 2024-05-15 14:32:34,372 [repository-manager-0 | c.o.p.literals-index] 12100000/12125776 done
+[INFO ] 2024-05-15 14:32:34,408 [repository-manager-0 | c.o.p.literals-index] Complete in 12.106, num entries indexed:5696704
+[INFO ] 2024-05-15 14:32:34,414 [repository-manager-0 | c.o.t.p.p.PluginControlPlugin] Plugin:plugincontrol initialized
+[INFO ] 2024-05-15 14:32:34,591 [repository-manager-0 | c.o.g.s.FunctionLoader] Registered 58 functions from package com.github.tkurz.sparqlmm.function.
+[INFO ] 2024-05-15 14:32:34,729 [repository-manager-0 | c.o.t.s.i.PluginManager] Finished initializing plugins
+[INFO ] 2024-05-15 14:32:34,730 [repository-manager-0 | c.o.t.MemoryConfig] Configured global page cache size to 11 GB
+[INFO ] 2024-05-15 14:32:34,730 [repository-manager-0 | c.o.t.MemoryConfig] Max Heap Size: 29 GB
+[INFO ] 2024-05-15 14:32:34,730 [repository-manager-0 | c.o.t.MemoryConfig] Initial Heap Size: 1 GB
+[INFO ] 2024-05-15 14:32:34,770 [repository-manager-0 | c.o.r.p.ParallelLoader] Data will be parsed + resolved + loaded.
+[INFO ] 2024-05-15 14:32:34,790 [repository-manager-0 | c.o.r.p.ParallelLoader] Using 1 threads for inference
+[INFO ] 2024-05-15 14:32:34,843 [repositories/da4dte_final | o.e.r.h.s.r.n.NamespacesController] GET namespace list
+[INFO ] 2024-05-15 14:32:34,843 [repositories/da4dte_final | o.e.r.h.s.r.n.NamespacesController] GET namespace list
+[INFO ] 2024-05-15 14:32:34,887 [repositories/da4dte_final | o.e.r.h.s.r.TupleQueryResultView] Request for query 3392903 is finished
+[INFO ] 2024-05-15 14:32:34,887 [repositories/da4dte_final | o.e.r.h.s.r.TupleQueryResultView] Request for query 3392903 is finished
+[INFO ] 2024-05-15 14:32:44,680 [Thread-4 | c.o.t.OwlimSchemaRepository] Shutdown hook invoked!
+[INFO ] 2024-05-15 14:32:44,680 [Thread-3 | c.o.g.s.GraphDB] Stopping GraphDB.
+[INFO ] 2024-05-15 14:32:44,694 [Thread-3 | c.o.f.c.s.SemanticDataManagement] Shutting down current semantic location
