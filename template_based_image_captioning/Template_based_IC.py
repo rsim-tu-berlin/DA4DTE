@@ -103,7 +103,7 @@ def object_surface(coords):
 # subdivide the image into 9 equal parts, starting from the top left;
 # patch zero is the upper-left, 
 
-# This function is used to divede images into patches to determine ships locations;
+# This function is used to dived images into patches to determine ships locations;
 def divide_image_into_patches(image_width, image_height, num_patches=9):
     # Create a 128x128 grid
     # plt.figure(figsize=(8, 8))
@@ -198,14 +198,14 @@ def replace_word(original_list, old_word, new_word):
 
 number(95)
 # path to the vessel detection dataset
-path_data = 'vessel_detection_dataset_v3/'
+path_data = '/mnt/storagecube/genc/data_vess/VesselDetection/v3/vessel_detection_dataset_v3/'
 
 # path of the coastlione shape file
-path_data_coastline = '/coastlines-split-4326/'
+path_data_coastline = '/mnt/storagecube/genc/data_vess/'
 
 
 # shp file read. Projection 'EPSG:4326'
-track_line = gpd.read_file(path_data_coastline+'lines.shp')
+track_line = gpd.read_file(path_data_coastline+'coastlines-split-4326/coastlines-split-4326/lines.shp')
 
 # vessel bbox annotations
 with open(path_data + 'vessels_dataset_annotations.json', encoding='utf-8') as data_file:
@@ -231,7 +231,8 @@ with open(path_data +'zero_patches.json', 'r') as zp:
     zero_patches = json.load(zp)
 
 # here starts the template based image captioning;
-
+l = 0
+print ('Temlate base IC started:')
 for k in annotaions_dict_t1:
 
     if os.path.exists (path_data +'/tif/' + k + '.tif') and k not in zero_patches['zero_patches'] :
@@ -246,6 +247,9 @@ for k in annotaions_dict_t1:
             raster_height = src.height
 
         image_height,image_width,  = int(image.shape[1]), int(image.shape[2])
+        # l = l+1
+        # if l==10:
+        #     break
 
         n = len(annotaions_dict_t1[k]['annotations'])
         bboxes = annotaions_dict_t1[k]['annotations']
@@ -319,10 +323,10 @@ for k in annotaions_dict_t1:
             template_4 = 'mask_n mask_obj'
 
         if n==0:
-            template_2 = 'vessel-free image'
-            template_3 = 'vessel-free image'
-            template_1 = 'vessel-free image'
-            template_4 = 'vessel-free image'
+            template_2 = 'other types of land use land cover classes'
+            template_3 = 'other types of land use land cover classes'
+            template_1 = 'other types of land use land cover classes'
+            template_4 = 'other types of land use land cover classes'
 
 
         # split the templates into tokens to substude the masked words with numbers, sizes and objects
@@ -416,6 +420,7 @@ for k in annotaions_dict_t1:
                     template_3_split = replace_word(template_3_split,'mask_obj', object_word)
                     
                     template_3_split[:0]=  where_object_3 
+                    # print (template_3_split[:0])
 
 
                     template_4_split = replace_word(template_4_split,'mask_n', number_word)
@@ -446,7 +451,7 @@ for k in annotaions_dict_t1:
                     # print (template_4_split)
                     # print ('A satellite image with ships in a coastline.')
             else:
-                template_4 = 'vessel-free image'
+                template_4 = 'other types of land use land cover classes'
                 template_4_split = template_4.split()
 
         else:
@@ -469,7 +474,7 @@ for k in annotaions_dict_t1:
                 template_3_split = replace_word(template_3_split,'mask_obj', object_word)
 
             else:
-                template_4 = 'vessel-free image'
+                template_4 = 'other types of land use land cover classes'
                 template_4_split = template_4.split()
 
         # Here we determine the area (surface of the bbx) in terms of pixels
@@ -513,7 +518,7 @@ for k in annotaions_dict_t1:
 
         if sm == 1 :
             if vs == 1 or vs != 1 and vs != 0:
-                template_2_split.append('and')
+                template_2_split.append(' and')
             # print ('sm == ',sm)
             size_o = ['small']
             object_ = 'boat'
@@ -523,7 +528,7 @@ for k in annotaions_dict_t1:
 
         if sm != 1 and sm !=0: 
             if vs == 1 or vs != 1 and vs != 0:
-                template_2_split.append('and')
+                template_2_split.append(' and')
             size_o = ['small']
             object_ = 'boats'
             if sm <6:
@@ -536,7 +541,7 @@ for k in annotaions_dict_t1:
 
         if med ==1:
             if vs == 1 or vs != 1 and vs != 0 or sm == 1 or sm != 1 and sm != 0:
-                template_2_split.append('and')
+                template_2_split.append(' and')
             size_o = ['medium-sized']
             object_ = 'boat'
             template_2_split.append(number(med))
@@ -544,7 +549,7 @@ for k in annotaions_dict_t1:
             template_2_split.append(object_)
         if med !=1 and med !=0:
             if vs == 1 or vs != 1 and vs != 0 or sm == 1 or sm != 1 and sm != 0:
-                template_2_split.append('and')
+                template_2_split.append(' and')
             size_o = ['medium-sized']
             object_ = 'boats'
             if med <6:
@@ -557,7 +562,7 @@ for k in annotaions_dict_t1:
 
         if big ==1:
             if vs == 1 or vs != 1 and vs != 0 or sm == 1 or sm != 1 and sm != 0 or med == 1 or med != 1 and med != 0:
-                template_2_split.append('and')
+                template_2_split.append(' and')
             size_o = ['big']
             object_ = 'ship'
             template_2_split.append(number(big))
@@ -565,7 +570,7 @@ for k in annotaions_dict_t1:
             template_2_split.append(object_)
         if big !=1 and big !=0:
             if vs == 1 or vs != 1 and vs != 0 or sm == 1 or sm != 1 and sm != 0 or med == 1 or med != 1 and med != 0:
-                template_2_split.append('and')
+                template_2_split.append(' and')
             size_o = ['big']
             object_ = 'ships'
             if big <6:
@@ -578,7 +583,7 @@ for k in annotaions_dict_t1:
 
         if vbig ==1:
             if vs == 1 or vs != 1 and vs != 0 or sm == 1 or sm != 1 and sm != 0 or med == 1 or med != 1 and med != 0 or big == 1 or big != 1 and big != 0:
-                template_2_split.append('and')
+                template_2_split.append(' and')
             size_o = ['very','big']
             object_ = 'ship'
             template_2_split.append(number(vbig))
@@ -599,15 +604,17 @@ for k in annotaions_dict_t1:
         
         
         joined_template_2_split = ' '.join(template_2_split)
+        # print (joined_template_2_split)
         joined_template_3_split = ' '.join(template_3_split)
 
-        words_1 = joined_template_2_split.split('and')
-        words_2 = joined_template_3_split.split('and')
+        words_1 = joined_template_2_split.split(' and')
+        # print (words_1)
+        words_2 = joined_template_3_split.split(' and')
 
         lenth_words_2 = len(words_2)
         if lenth_words_2>2:
 
-            words_2.insert(lenth_words_2-1,'and')
+            words_2.insert(lenth_words_2-1,' and')
             new_sentence_2 = ' '.join(words_2)
             spl_2= new_sentence_2.split()
             joined_template_3_split =' '.join(spl_2)
@@ -617,14 +624,16 @@ for k in annotaions_dict_t1:
 
         lenth_words_1 = len(words_1)
         if lenth_words_1>2:
-            words_1.insert(lenth_words_1-1,'and')
+            words_1.insert(lenth_words_1-1,' and')
             new_sentence = ' '.join(words_1)
+            
             spl= new_sentence.split()
             joined_template_2_split =' '.join(spl)
 
             
 
         template_2_list.append(joined_template_2_split)
+
 
 
         for i in template_1_split:
@@ -647,7 +656,7 @@ for k in annotaions_dict_t1:
                 template_1_split = replace_word(template_1_split, 'mask_obj', object_word)
             
             else:
-                template_1_split = "vessel-free image".split()
+                template_1_split = "other types of land use land cover classes".split()
                 
                 
 
@@ -664,16 +673,16 @@ for k in annotaions_dict_t1:
 
 
 
-print (len(ids_list_keys ))
-print (len(template_1_list)) 
-print(len(template_2_list)) 
-print (len(template_3_list))
-print (len(template_4_list))
+# print (len(ids_list_keys ))
+# print (len(template_1_list)) 
+# print(len(template_2_list)) 
+# print (len(template_3_list))
+# print (len(template_4_list))
 
-print (template_1_list[0])
-print (template_2_list[0])
-print (template_3_list[0])
-print (template_4_list[0])
+# print (template_1_list)
+# print (template_2_list)
+# print (template_3_list)
+# print (template_4_list)
 
 
 # create json files
@@ -711,9 +720,9 @@ for i in range (len(ids_list_keys)):
     vessel_detection['images'].append(a)
     # if l == 5:
     #     break
-    
-
-with open(path_data +'vessel_captioning_prova_f.json', 'w') as fp:
+# print (vessel_detection)  
+path_data = '/mnt/storagecube/genc/data_vess/VesselDetection/v3/vessel_detection_dataset_v3/'
+with open(path_data +'vessel_captioning_prova_1.json', 'w') as fp:
     json.dump(vessel_detection, fp) 
-# vessel_detection
+print ('Caption Generation ended')
 
