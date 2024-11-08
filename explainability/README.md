@@ -9,3 +9,13 @@ For the explainability-code, the models to be explained are re-implemented such 
 #### Code
 
 This sub-repo contains two folders for LRP+BiLRP for vessel and LRP for BEN. The process of obtaining explanations should be straightforward by following these implementations and demo files. The respective model weights which are assumed to be in `./weights/` can be downloaded from the shared TUB-Cloud, as they are too big for GitHub.
+
+## Acknowledgment
+
+This software was developed by [RSiM](https://rsim.berlin/) of TU Berlin.
+
+- [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein)
+- [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha)
+- [Begum Demir](https://rsim.berlin/team/members/begum-demir)
+
+For questions, requests and concerns, please contact [Jakob Hackstein via mail](mailto:hackstein@tu-berlin.de)

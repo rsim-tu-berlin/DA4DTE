@@ -88,3 +88,14 @@ model = CMMAEBackboneVessel()
 state_dict = torch.load(f'./checkpoints/weights_vessel.ckpt', map_location="cpu")['state_dict']
 model.load_state_dict(state_dict, strict=True)
 ```
+
+
+# Acknowledgment
+
+This software was developed by [RSiM](https://rsim.berlin/) of TU Berlin.
+
+- [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein)
+- [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha)
+- [Begum Demir](https://rsim.berlin/team/members/begum-demir)
+
+For questions, requests and concerns, please contact [Jakob Hackstein via mail](mailto:hackstein@tu-berlin.de)
