@@ -1,0 +1,3 @@
+# Dataset Composer
+
+In this repository, we demonstrate how to utilize content-based image retrieval methods to enrich or compose datasets. To this end, we prepared a demonstration notebook that examplifies through the process of enriching a subset of BEN with underrepresented labels such as coniferous forest. The `dataset_demo.ipynb` guides through the process in different sections and explains the necessary steps.
