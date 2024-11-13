@@ -18,7 +18,7 @@ The following list provides an overview of the products of the DA4DTE project by
 | [DA4DTE Knowledge Graph Tools](./kg_tools/) <br> ➡️ Tools for constructing, deploying, and optimizing the DA4DTE knowledge graph |
 | [DA4DTE-VQA](./visual_question_answering/) <br> ➡️ Visual Question Answering engine for DA4DTE |
 | [Search-by-Image Engines](./search_by_image_engines/) <br> ➡️ Search by Image retrieval engines for DA4DTE |
-| [Explainability Tools](./explainability/) <br> ➡️ Tools for explaining decisions of search-by-image engines |
+| [xAI Tools](./xai_tools/) <br> ➡️ Tools for explaining decisions of search-by-image engines |
 | [Search-by-Text Engines](./search_by_text_engines/) <br> ➡️ Query by Text retrieval engines for DA4DTE |
 | [Template-based Image Captioning](./template_based_image_captioning/) <br> ➡️ Template-based Image Captioning for DA4DTE |
 | [Training Dataset Constructor](./training_dataset_constructor/) <br> ➡️ Training dataset construction using search-by-image engines |
