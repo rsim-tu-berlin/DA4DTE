@@ -2,7 +2,6 @@
 
 <div align="center">
   <img src="DA4DTE_logo.png" style="font-size: 1rem; height: 6em; width: auto; padding-right: 30px;" />
-  <img src="DA4DTE_partners.png" style="font-size: 1rem; height: 6em; width: auto; padding-right: 30px;"/>
 </div>
 &ensp;
 &ensp;
@@ -11,7 +10,7 @@
 
 ## Products
 
-The following list provides an overview of the achievements of the DA4DTE project by the [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin) and by the [AI Team](https://ai.di.uoa.gr/) of the [National and Kapodistrian University of Athens](https://en.uoa.gr/).
+The following list provides an overview of the products of the DA4DTE project by the [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin) and by the [AI Team](https://ai.di.uoa.gr/) of the [National and Kapodistrian University of Athens](https://en.uoa.gr/).
 
 |  Product Repositories |
 |-------------|
