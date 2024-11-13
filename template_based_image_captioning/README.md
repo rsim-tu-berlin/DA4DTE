@@ -1,9 +1,9 @@
 # Template-based Image Captioning
 
-This repository contains code template based image captioning method developed within [DA4DTE project](https://eo4society.esa.int/projects/da4dte/). This work has been done at the [Remote Sensing Image Analysis group](https://www.rsim.tu-berlin.de/menue/remote_sensing_image_analysis_group/)
+This repository contains code for the template based image captioning approach developed within [DA4DTE project](https://eo4society.esa.int/projects/da4dte/). This work has been done at the [Remote Sensing Image Analysis group](https://www.rsim.tu-berlin.de/menue/remote_sensing_image_analysis_group/)
 by [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha), and [Begüm Demir]( https://rsim.berlin/team/members/begum-demir). 
 
-This code is used to create vessel captioning dataset which is used by the query by text retrieval engine. The template-based image captioning creates four different sentences describing aspects of the vessels that are present in an image utilizing the information coming from bounding boxes and auxiliary data. In particular, from the bounding boxes we have extracted information regarding the size of the vessels and their number. This information is then combined with the auxiliary information coming from OpenStreetMap (OSM) to determine the vessels’ location with respect to a harbor or a coastline. To this end, we used the coastline information derived by OSM that can be accessed at the following link: https://osmdata.openstreetmap.de/data/coastlines.html. 
+This code is used to create vessel captioning dataset that is used by the query by text retrieval engine. The template-based image captioning approach creates four different sentences describing aspects of the vessels that are present in an image utilizing the information from bounding boxes and auxiliary data. In particular, from the bounding boxes we have extracted information regarding the size of the vessels and their number. This information is then combined with the auxiliary information from OpenStreetMap (OSM) to determine the vessels’ location with respect to a harbor or a coastline. To this end, we used the coastline information derived by OSM that can be accessed at the following link: https://osmdata.openstreetmap.de/data/coastlines.html. 
 
 # Prerequisites
 
