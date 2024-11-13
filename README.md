@@ -9,8 +9,6 @@
 
 [Demonstrator Precursor Digital Assistant Interface for Digital Twin Earth](http://da4dte.e-geos.earth/) (DA4DTE) project funded by the European Space Agency (ESA) aims to design and develop an AI-powered digital assistant that includes four search engines for satellite images (search by image, search by caption, visual question answering and knowledge graph question answering) that are orchestrated by a task interpreter in order to answer complex requests of users associated to satellite data. The project consortium is led by the eGEOS, with the National and [Kapodistrian University of Athens](https://en.uoa.gr/) and the [TU Berlin](https://tu.berlin) as subcontractors. The digital assistant builds on recent work of the academic project partners on deep learning techniques for satellite images, search engines for satellite images, visual question answering, question answering over knowledge graphs and linked geospatial data, and question answering engines for satellite data archives. 
 
-The following list provides an overview of the achievements of the DA4DTE project by the [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin) and the [Kapodistrian University of Athens](https://en.uoa.gr/). 
-
 ## Achievements
 
 The following list provides an overview of the achievements of the DA4DTE project by the [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin) and the [Kapodistrian University of Athens](https://en.uoa.gr/). 
