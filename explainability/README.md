@@ -1,6 +1,6 @@
-# Explainability Tools
+# xAI Tools
 
-In this repository, the software for two explainability methods called LRP and BiLRP is contained. The first method explains class-decisions by highlighting the area that was attended to form a classification decision, and the second draws arrows between two images which lead to similar representations in embedding space. We show two implementations according to two different models/datasets. For the vessel-detection dataset, we demonstrate LRP and BiLRP, and for BigEarthNet, we demonstrate LRP only since BiLRP is computationally too expensive. 
+In this repository, the software for two explanation methods called LRP and BiLRP is contained. The first method explains class-decisions by highlighting the area that was attended to form a classification decision, and the second draws arrows between two images which lead to similar representations in embedding space. We show two implementations according to two different models/datasets. For the vessel-detection dataset, we demonstrate LRP and BiLRP, and for BigEarthNet, we demonstrate LRP only since BiLRP is computationally too expensive. 
 
 #### Documentation
 
