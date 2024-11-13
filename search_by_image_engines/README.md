@@ -1,4 +1,4 @@
-# Search-by-image Engines
+# Search-by-Image Engines
 
 In this repository, the software for search-by-image engines is documented. Three scripts execute the main parts of this sub-project:
 - Pretraining: `main_pretrain.py`
