@@ -7,13 +7,13 @@
 &ensp;
 &ensp;
 
-[Demonstrator Precursor Digital Assistant Interface for Digital Twin Earth](http://da4dte.e-geos.earth/) (DA4DTE) project funded by the European Space Agency (ESA) aims to advance the way satellite data archives are accessed and utilized through the development of a state-of-the-art digital assistant. DA4DTE strives to create a user-friendly and efficient digital assistant tailored explicitly for satellite data archives. With its overarching goal to enhance the accessibility of Earth observation data, this demonstrator precursor simplifies the process of retrieving essential satellite images and information. At its core, the DA4DTE digital assistant incorporates 'Content-based Extractor Engines', addressing specific user needs and queries. In this repository, we gather code for the image search engines from [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin), capable of search-by-text, search-by-image as well as explaining corresponding decisions made by these models, and code for NLP based engines from the [AI-Team](https://ai.di.uoa.gr) of the [Department of Informatics and Telecommunications](https://www.di.uoa.gr/) at the [University of Athens](https://en.uoa.gr/), capable of conversing with the user in natural language, understanding user intent and knowledge-graph question answering for satellite image archives .
+[Demonstrator Precursor Digital Assistant Interface for Digital Twin Earth](http://da4dte.e-geos.earth/) (DA4DTE) project funded by the European Space Agency (ESA) aims to design and develop an AI-powered digital assistant that includes four search engines for satellite images (search by image, search by caption, visual question answering and knowledge graph question answering) that are orchestrated by a task interpreter in order to answer complex requests of users associated to satellite data. The project consortium is led by the eGEOS, with the National and [Kapodistrian University of Athens](https://en.uoa.gr/) and the [TU Berlin](https://tu.berlin) as subcontractors. The digital assistant builds on recent work of the academic project partners on deep learning techniques for satellite images, search engines for satellite images, visual question answering, question answering over knowledge graphs and linked geospatial data, and question answering engines for satellite data archives. 
 
+The following list provides an overview of the achievements of the DA4DTE project by the [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin) and the [Kapodistrian University of Athens](https://en.uoa.gr/). 
 
-## Project Structure
+## Achievements
 
-As the DA4DTE project consists of several components, we divide this repository in smaller sub-repositories that contain implementations of these smaller standalone components. A list of all sub-repositories including a small description is given below.
-
+The following list provides an overview of the achievements of the DA4DTE project by the [Remote Sensing Image Analysis (RSiM)](https://rsim.berlin) Group of [TU Berlin](https://tu.berlin) and the [Kapodistrian University of Athens](https://en.uoa.gr/). 
 
 |  Sub-Repositories |
 |-------------|
