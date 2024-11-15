@@ -15,10 +15,10 @@ Run the caption generation code with  python Template_based_IC.py
 
 ## License
 
-The code in this repository to facilitate the use of the `Deep Unsupervised Contrastive Hashing for Large-Scale Cross-Modal Text-Image Retrieval in Remote Sensing` is available under the terms of **MIT license**:
+The code in this repository is available under the terms of **MIT license**:
 
 ```
-Copyright (c) 2022 the Authors of The Paper, "Deep Unsupervised Contrastive Hashing for Large-Scale Cross-Modal Text-Image Retrieval in Remote Sensing"
+Copyright (c) 2022 Genc Hoxha and Begüm Demir
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
