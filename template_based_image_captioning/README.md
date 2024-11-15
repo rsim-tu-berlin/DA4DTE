@@ -3,7 +3,7 @@
 This repository contains code for the template based image captioning approach developed within [DA4DTE project](https://eo4society.esa.int/projects/da4dte/). This work has been done at the [Remote Sensing Image Analysis group](https://www.rsim.tu-berlin.de/menue/remote_sensing_image_analysis_group/)
 by [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha), and [Begüm Demir]( https://rsim.berlin/team/members/begum-demir). 
 
-This code is used to create vessel captioning dataset that is used by the query by text retrieval engine. The template-based image captioning approach creates four different sentences describing aspects of the vessels that are present in an image utilizing the information from bounding boxes and auxiliary data. In particular, from the bounding boxes we have extracted information regarding the size of the vessels and their number. This information is then combined with the auxiliary information from OpenStreetMap (OSM) to determine the vessels’ location with respect to a harbor or a coastline. To this end, we used the coastline information derived by OSM that can be accessed at the following link: https://osmdata.openstreetmap.de/data/coastlines.html. 
+This code is used to create vessel captioning dataset that is used by the search (query) by text (i.e., image caption) engine. The template-based image captioning approach creates four different sentences describing aspects of the vessels that are present in an image utilizing the information from bounding boxes and auxiliary data. In particular, from the bounding boxes we have extracted information regarding the size of the vessels and their number. This information is then combined with the auxiliary information from OpenStreetMap (OSM) to determine the vessels’ location with respect to a harbor or a coastline. To this end, we used the coastline information derived by OSM that can be accessed at the following link: https://osmdata.openstreetmap.de/data/coastlines.html.
 
 # Prerequisites
 
@@ -11,6 +11,13 @@ The code in this repository uses the requirements specified in environment.yml. 
 
 # Caption Generation
 Run the caption generation code with  python Template_based_IC.py
+
+# Vessel Captioning Dataset Examples 
+
+<figure class="image">
+  <img src="dataset_example.png" alt="{{ include.description }}">
+  <figcaption> Example of images and their captions from the vessel captioning datasets. In the sentences, the words in green represent the vessels while the words in red, blue and purple colours represent their number, size and location, respectively </figcaption>
+</figure>
 
 
 ## License
