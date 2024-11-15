@@ -15,7 +15,7 @@ Run the caption generation code with  python Template_based_IC.py
 # Vessel Captioning Dataset Examples 
 
 <figure class="image">
-  <img src="dataset_example.png" alt="{{ include.description }}">
+  <img src="dataset_example.png" width="711" height="822" alt="{{ include.description }}">
   <figcaption> Example of images and their captions from the vessel captioning datasets. In the sentences, the words in green represent the vessels while the words in red, blue and purple colours represent their number, size and location, respectively </figcaption>
 </figure>
 
