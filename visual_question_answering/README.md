@@ -1,10 +1,10 @@
 # DA4DTE-VQA
 
-This repository contains the code used to train and deploy the Visual Question Answering engine for [DA4DTE](https://eo4society.esa.int/projects/da4dte/). Uses RSVQAxBEN for training therefore only Sentinel-2 images (10-bands) are supported.
+This repository contains the code used to train and deploy the Visual Question Answering engine for [DA4DTE](https://eo4society.esa.int/projects/da4dte/). It uses [RSVQAxBEN](https://github.com/syvlo/RSVQAxBEN) for training therefore only Sentinel-2 images (10-bands) are supported.
 
 ## Input
 
-The model  takes input in the form of a question in natural language (English) and a Sentinel-2 image with 10 bands and 120x120 dimensions. 
+The model takes input in the form of a question in natural language (English) and a Sentinel-2 image with 10 bands and 120x120 dimensions. 
 
 ##### The bands must be combined as follows:
 
