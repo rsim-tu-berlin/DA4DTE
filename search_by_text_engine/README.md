@@ -1,7 +1,7 @@
-# Query by Text Retrieval Engine
+# Search by Text Retrieval Engine
 
-This repository contains code of the query by text retrieval engine developed within [DA4DTE project](https://eo4society.esa.int/projects/da4dte/). This work has been done at the [Remote Sensing Image Analysis group](https://www.rsim.tu-berlin.de/menue/remote_sensing_image_analysis_group/) by [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha), [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein) and [Begüm Demir]( https://rsim.berlin/team/members/begum-demir). 
-The query by text retrieval engine is based on the paper [`Deep Unsupervised Contrastive Hashing for Large-Scale Cross-Modal Text-Image Retrieval in Remote Sensing`](https://arxiv.org/abs/2201.08125) and its [relative repository](https://git.tu-berlin.de/rsim/duch).
+This repository contains code of the search (query) by text (i.e., image caption) engine developed within [DA4DTE project](https://eo4society.esa.int/projects/da4dte/). This work has been done at the [Remote Sensing Image Analysis group](https://www.rsim.tu-berlin.de/menue/remote_sensing_image_analysis_group/) by [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha), [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein) and [Begüm Demir]( https://rsim.berlin/team/members/begum-demir). 
+The query by text engine is based on the paper [`Deep Unsupervised Contrastive Hashing for Large-Scale Cross-Modal Text-Image Retrieval in Remote Sensing`](https://arxiv.org/abs/2201.08125) (DUCH) and its [relative repository](https://git.tu-berlin.de/rsim/duch).
 
 If you use this code, please cite the paper given below:
 
@@ -154,7 +154,7 @@ captions_augment.py --dataset vessel_dataset --txt-aug rule-based
 
 #### Embedding
 
-Embeds captions (`raw`) and augmented captions (`aug_rb`, `aug_bt_prob`, `aug_bt_chain`) consequently.
+Embeddings of the raw captions (`raw`) and the augmented captions (`aug_rb`, `aug_bt_prob`, `aug_bt_chain`) consequently.
 ```
 captions_embed.py [-h] [--dataset DATASET_NAME]
 
