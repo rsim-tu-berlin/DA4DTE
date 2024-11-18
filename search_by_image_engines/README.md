@@ -8,7 +8,7 @@ In this repository, the software for search-by-image engines is documented. Thre
 
 ## Datasets
 
-There are two datasets used to train search-by-image engines, which are [BigEarthNet-MM](https://bigearth.net/) (BEN) and vessel detection dataset (VDD). In the corresponding folders, implementations of torch datasets are provided. VDD directly operates on TIF-files and BEN expects a LMDB file, which can be obtained by following the guidelines [here](http://docs.kai-tub.tech/bigearthnet_encoder/intro.html). For VDD, we create custom query/archive splits by using the [`gen_query_archive.ipynb`](./src/vessel_dataset/gen_query_archive.ipynb) notebook.
+There are two datasets used to train search-by-image engines, which are [BigEarthNet-MM](https://bigearth.net/) (BEN) and vessel detection dataset (VDD). In the corresponding folders, implementations of torch datasets are provided. VDD directly operates on TIF-files and BEN expects a LMDB file, which can be obtained by following the guidelines [here](https://github.com/kai-tub/bigearthnet_encoder). For VDD, we create custom query/archive splits by using the [`gen_query_archive.ipynb`](./src/vessel_dataset/gen_query_archive.ipynb) notebook.
 
 
 ## Pretraining
