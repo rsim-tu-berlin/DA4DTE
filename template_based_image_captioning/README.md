@@ -4,6 +4,7 @@ This repository contains code for the template based image captioning approach d
 by [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha), and [Begüm Demir]( https://rsim.berlin/team/members/begum-demir). 
 
 This code is used to create vessel captioning dataset that is used by the search (query) by text (i.e., image caption) engine. The template-based image captioning approach creates four different sentences describing aspects of the vessels that are present in an image utilizing the information from bounding boxes and auxiliary data. In particular, from the bounding boxes we have extracted information regarding the size of the vessels and their number. This information is then combined with the auxiliary information from OpenStreetMap (OSM) to determine the vessels’ location with respect to a harbor or a coastline. To this end, we used the coastline information derived by OSM that can be accessed at the following link: https://osmdata.openstreetmap.de/data/coastlines.html.
+The vessel detection and captioning (VLDC) dataset can be accessed at the following link:  https://tubcloud.tu-berlin.de/s/fTiBKoxirFXWRCr.
 
 # Prerequisites
 
