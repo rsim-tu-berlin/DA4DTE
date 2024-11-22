@@ -16,7 +16,7 @@ class BaseConfig:
             self.dataset_image_folder_path = "/home/george/Dropbox/RSICD/images"
 
         if args.dataset == "vessel_dataset":
-            # self.dataset_image_folder_path = '/mnt/storagecube/genc/data_vess/VesselDetection/v3/vessel_detection_dataset_v3/tif/'
+            
             self.dataset_image_folder_path = "/vessel_detection_dataset_v3/png/"
         self._print_config()
 

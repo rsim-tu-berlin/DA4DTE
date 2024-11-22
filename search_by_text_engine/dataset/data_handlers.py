@@ -282,9 +282,9 @@ def split_indexes(idx_all):
     )
     print(len(img_filenames))
 
-    query_balanced_json_file = "/mnt/storagecube/genc/data_vess/VesselDetection/v3/vessel_detection_dataset_v3/balanced_patches.json"
-    archive_json_file = "/mnt/storagecube/genc/data_vess/VesselDetection/v3/vessel_detection_dataset_v3/archive_patches.json"
-    query_json_file = "/mnt/storagecube/genc/data_vess/VesselDetection/v3/vessel_detection_dataset_v3/query_patches.json"
+    query_balanced_json_file = "/data/balanced_patches.json"
+    archive_json_file = "/data/archive_patches.json"
+    query_json_file = "/data/query_patches.json"
     # ic()
 
     data_archive = read_json(archive_json_file)
