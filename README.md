@@ -21,3 +21,4 @@ The following list provides an overview of the products of the DA4DTE project by
 | [Search-by-Text Engine](./search_by_text_engine/) <br> ➡️ Search by Text retrieval engine for DA4DTE |
 | [Template-based Image Captioning](./template_based_image_captioning/) <br> ➡️ Template-based Image Captioning for DA4DTE |
 | [Training Dataset Constructor](./training_dataset_constructor/) <br> ➡️ Training dataset construction using search-by-image engines |
+| [DA4DTE Task Interpreter](./task_interpreter/) <br> ➡️ Task Interpreter for DA4DTE |
