@@ -92,7 +92,7 @@ model.load_state_dict(state_dict, strict=True)
 
 # Acknowledgment
 
-This software was developed by [RSiM](https://rsim.berlin/) of TU Berlin.
+This software was developed by [RSiM](https://rsim.berlin/) of [BIFOLD](https://bifold.berlin) and [TU Berlin](https://tu.berlin).
 
 - [Jakob Hackstein](https://rsim.berlin/team/members/jakob-hackstein)
 - [Genc Hoxha](https://rsim.berlin/team/members/genc-hoxha)
